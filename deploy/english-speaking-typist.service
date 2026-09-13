@@ -1,0 +1,14 @@
+[Unit]
+Description=English Speaking Typist
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/services/english-speaking-typist
+ExecStart=/usr/bin/python3 %h/services/english-speaking-typist/server.py --port 8780
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=default.target

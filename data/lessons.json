@@ -1,0 +1,152 @@
+[
+  {
+    "word":"settings","meaning":"设置","category":"界面英语","ipa":"ˈsɛtɪŋz","phonemes":["S","EH","T","IH","NG","Z"],
+    "segments":[{"letters":"s","phonemes":["S"]},{"letters":"e","phonemes":["EH"]},{"letters":"tt","phonemes":["T"]},{"letters":"ing","phonemes":["IH","NG"]},{"letters":"s","phonemes":["Z"]}],
+    "example":"Open Settings to change the language."
+  },
+  {
+    "word":"privacy","meaning":"隐私","category":"界面英语","ipa":"ˈpraɪvəsi","phonemes":["P","R","AY","V","AX","S","IY"],
+    "segments":[{"letters":"pr","phonemes":["P","R"]},{"letters":"i","phonemes":["AY"]},{"letters":"v","phonemes":["V"]},{"letters":"a","phonemes":["AX"]},{"letters":"cy","phonemes":["S","IY"]}],
+    "example":"Review your privacy settings."
+  },
+  {
+    "word":"permission","meaning":"权限；许可","category":"界面英语","ipa":"pɝˈmɪʃən","phonemes":["P","ER","M","IH","SH","AX","N"],
+    "segments":[{"letters":"p","phonemes":["P"]},{"letters":"er","phonemes":["ER"]},{"letters":"mi","phonemes":["M","IH"]},{"letters":"ssion","phonemes":["SH","AX","N"]}],
+    "example":"The app needs permission to use the microphone."
+  },
+  {
+    "word":"notification","meaning":"通知","category":"界面英语","ipa":"ˌnoʊtɪfɪˈkeɪʃən","phonemes":["N","OW","T","IH","F","IH","K","EY","SH","AX","N"],
+    "segments":[{"letters":"n","phonemes":["N"]},{"letters":"o","phonemes":["OW"]},{"letters":"ti","phonemes":["T","IH"]},{"letters":"fi","phonemes":["F","IH"]},{"letters":"ca","phonemes":["K","EY"]},{"letters":"tion","phonemes":["SH","AX","N"]}],
+    "example":"Turn off this notification."
+  },
+  {
+    "word":"storage","meaning":"存储空间","category":"界面英语","ipa":"ˈstɔɹɪdʒ","phonemes":["S","T","AO","R","IH","JH"],
+    "segments":[{"letters":"st","phonemes":["S","T"]},{"letters":"or","phonemes":["AO","R"]},{"letters":"age","phonemes":["IH","JH"]}],
+    "example":"Check how much storage is available."
+  },
+  {
+    "word":"backup","meaning":"备份","category":"界面英语","ipa":"ˈbækʌp","phonemes":["B","AE","K","AH","P"],
+    "segments":[{"letters":"b","phonemes":["B"]},{"letters":"a","phonemes":["AE"]},{"letters":"ck","phonemes":["K"]},{"letters":"u","phonemes":["AH"]},{"letters":"p","phonemes":["P"]}],
+    "example":"Create a backup before updating."
+  },
+  {
+    "word":"account","meaning":"账户","category":"界面英语","ipa":"əˈkaʊnt","phonemes":["AX","K","AW","N","T"],
+    "segments":[{"letters":"a","phonemes":["AX"]},{"letters":"cc","phonemes":["K"]},{"letters":"ou","phonemes":["AW"]},{"letters":"n","phonemes":["N"]},{"letters":"t","phonemes":["T"]}],
+    "example":"Sign in to your account."
+  },
+  {
+    "word":"device","meaning":"设备","category":"界面英语","ipa":"dɪˈvaɪs","phonemes":["D","IH","V","AY","S"],
+    "segments":[{"letters":"d","phonemes":["D"]},{"letters":"e","phonemes":["IH"]},{"letters":"v","phonemes":["V"]},{"letters":"i","phonemes":["AY"]},{"letters":"ce","phonemes":["S"]}],
+    "example":"Connect a new device."
+  },
+  {
+    "word":"download","meaning":"下载","category":"界面英语","ipa":"ˈdaʊnloʊd","phonemes":["D","AW","N","L","OW","D"],
+    "segments":[{"letters":"d","phonemes":["D"]},{"letters":"ow","phonemes":["AW"]},{"letters":"n","phonemes":["N"]},{"letters":"l","phonemes":["L"]},{"letters":"oa","phonemes":["OW"]},{"letters":"d","phonemes":["D"]}],
+    "example":"Download the file for offline use."
+  },
+  {
+    "word":"upload","meaning":"上传","category":"界面英语","ipa":"ˈʌploʊd","phonemes":["AH","P","L","OW","D"],
+    "segments":[{"letters":"u","phonemes":["AH"]},{"letters":"p","phonemes":["P"]},{"letters":"l","phonemes":["L"]},{"letters":"oa","phonemes":["OW"]},{"letters":"d","phonemes":["D"]}],
+    "example":"Upload an image from your computer."
+  },
+  {
+    "word":"enable","meaning":"启用","category":"界面英语","ipa":"ɪˈneɪbəl","phonemes":["IH","N","EY","B","AX","L"],
+    "segments":[{"letters":"e","phonemes":["IH"]},{"letters":"n","phonemes":["N"]},{"letters":"a","phonemes":["EY"]},{"letters":"b","phonemes":["B"]},{"letters":"le","phonemes":["AX","L"]}],
+    "example":"Enable sound before you start."
+  },
+  {
+    "word":"disable","meaning":"禁用","category":"界面英语","ipa":"dɪsˈeɪbəl","phonemes":["D","IH","S","EY","B","AX","L"],
+    "segments":[{"letters":"d","phonemes":["D"]},{"letters":"i","phonemes":["IH"]},{"letters":"s","phonemes":["S"]},{"letters":"a","phonemes":["EY"]},{"letters":"b","phonemes":["B"]},{"letters":"le","phonemes":["AX","L"]}],
+    "example":"Disable notifications for this app."
+  },
+  {
+    "word":"update","meaning":"更新","category":"界面英语","ipa":"ˈʌpdeɪt","phonemes":["AH","P","D","EY","T"],
+    "segments":[{"letters":"u","phonemes":["AH"]},{"letters":"p","phonemes":["P"]},{"letters":"d","phonemes":["D"]},{"letters":"a","phonemes":["EY"]},{"letters":"te","phonemes":["T"]}],
+    "example":"Install the latest update."
+  },
+  {
+    "word":"delete","meaning":"删除","category":"界面英语","ipa":"dɪˈliːt","phonemes":["D","IH","L","IY","T"],
+    "segments":[{"letters":"d","phonemes":["D"]},{"letters":"e","phonemes":["IH"]},{"letters":"l","phonemes":["L"]},{"letters":"e","phonemes":["IY"]},{"letters":"te","phonemes":["T"]}],
+    "example":"Delete the old file."
+  },
+  {
+    "word":"search","meaning":"搜索","category":"界面英语","ipa":"sɝtʃ","phonemes":["S","ER","CH"],
+    "segments":[{"letters":"s","phonemes":["S"]},{"letters":"ear","phonemes":["ER"]},{"letters":"ch","phonemes":["CH"]}],
+    "example":"Search for a setting."
+  },
+  {
+    "word":"variable","meaning":"变量","category":"编程英语","ipa":"ˈvɛɹiəbəl","phonemes":["V","EH","R","IY","AX","B","AX","L"],
+    "segments":[{"letters":"v","phonemes":["V"]},{"letters":"ar","phonemes":["EH","R"]},{"letters":"i","phonemes":["IY"]},{"letters":"a","phonemes":["AX"]},{"letters":"b","phonemes":["B"]},{"letters":"le","phonemes":["AX","L"]}],
+    "example":"Store the value in a variable."
+  },
+  {
+    "word":"function","meaning":"函数","category":"编程英语","ipa":"ˈfʌŋkʃən","phonemes":["F","AH","NG","K","SH","AX","N"],
+    "segments":[{"letters":"f","phonemes":["F"]},{"letters":"u","phonemes":["AH"]},{"letters":"n","phonemes":["NG"]},{"letters":"c","phonemes":["K"]},{"letters":"tion","phonemes":["SH","AX","N"]}],
+    "example":"Call the function with one argument."
+  },
+  {
+    "word":"return","meaning":"返回","category":"编程英语","ipa":"ɹɪˈtɝn","phonemes":["R","IH","T","ER","N"],
+    "segments":[{"letters":"r","phonemes":["R"]},{"letters":"e","phonemes":["IH"]},{"letters":"t","phonemes":["T"]},{"letters":"ur","phonemes":["ER"]},{"letters":"n","phonemes":["N"]}],
+    "example":"Return the result from the function."
+  },
+  {
+    "word":"value","meaning":"值","category":"编程英语","ipa":"ˈvæljuː","phonemes":["V","AE","L","Y","UW"],
+    "segments":[{"letters":"v","phonemes":["V"]},{"letters":"a","phonemes":["AE"]},{"letters":"l","phonemes":["L"]},{"letters":"ue","phonemes":["Y","UW"]}],
+    "example":"Check the returned value."
+  },
+  {
+    "word":"string","meaning":"字符串","category":"编程英语","ipa":"stɹɪŋ","phonemes":["S","T","R","IH","NG"],
+    "segments":[{"letters":"str","phonemes":["S","T","R"]},{"letters":"i","phonemes":["IH"]},{"letters":"ng","phonemes":["NG"]}],
+    "example":"This variable contains a string."
+  },
+  {
+    "word":"boolean","meaning":"布尔值","category":"编程英语","ipa":"ˈbuːliən","phonemes":["B","UW","L","IY","AX","N"],
+    "segments":[{"letters":"b","phonemes":["B"]},{"letters":"oo","phonemes":["UW"]},{"letters":"l","phonemes":["L"]},{"letters":"e","phonemes":["IY"]},{"letters":"a","phonemes":["AX"]},{"letters":"n","phonemes":["N"]}],
+    "example":"The expression returns a boolean."
+  },
+  {
+    "word":"array","meaning":"数组","category":"编程英语","ipa":"əˈɹeɪ","phonemes":["AX","R","EY"],
+    "segments":[{"letters":"a","phonemes":["AX"]},{"letters":"rr","phonemes":["R"]},{"letters":"ay","phonemes":["EY"]}],
+    "example":"Add the item to the array."
+  },
+  {
+    "word":"object","meaning":"对象","category":"编程英语","ipa":"ˈɑbdʒɛkt","phonemes":["AA","B","JH","EH","K","T"],
+    "segments":[{"letters":"o","phonemes":["AA"]},{"letters":"b","phonemes":["B"]},{"letters":"j","phonemes":["JH"]},{"letters":"e","phonemes":["EH"]},{"letters":"c","phonemes":["K"]},{"letters":"t","phonemes":["T"]}],
+    "example":"Read a property from the object."
+  },
+  {
+    "word":"request","meaning":"请求","category":"编程英语","ipa":"ɹɪˈkwɛst","phonemes":["R","IH","K","W","EH","S","T"],
+    "segments":[{"letters":"r","phonemes":["R"]},{"letters":"e","phonemes":["IH"]},{"letters":"qu","phonemes":["K","W"]},{"letters":"e","phonemes":["EH"]},{"letters":"s","phonemes":["S"]},{"letters":"t","phonemes":["T"]}],
+    "example":"Send a request to the server."
+  },
+  {
+    "word":"response","meaning":"响应","category":"编程英语","ipa":"ɹɪˈspɑns","phonemes":["R","IH","S","P","AA","N","S"],
+    "segments":[{"letters":"r","phonemes":["R"]},{"letters":"e","phonemes":["IH"]},{"letters":"s","phonemes":["S"]},{"letters":"p","phonemes":["P"]},{"letters":"on","phonemes":["AA","N"]},{"letters":"se","phonemes":["S"]}],
+    "example":"Parse the response as JSON."
+  },
+  {
+    "word":"error","meaning":"错误","category":"编程英语","ipa":"ˈɛɹɚ","phonemes":["EH","R","ER"],
+    "segments":[{"letters":"e","phonemes":["EH"]},{"letters":"rr","phonemes":["R"]},{"letters":"or","phonemes":["ER"]}],
+    "example":"Read the error message carefully."
+  },
+  {
+    "word":"warning","meaning":"警告","category":"编程英语","ipa":"ˈwɔɹnɪŋ","phonemes":["W","AO","R","N","IH","NG"],
+    "segments":[{"letters":"w","phonemes":["W"]},{"letters":"ar","phonemes":["AO","R"]},{"letters":"n","phonemes":["N"]},{"letters":"ing","phonemes":["IH","NG"]}],
+    "example":"Fix the warning before release."
+  },
+  {
+    "word":"async","meaning":"异步的","category":"编程英语","ipa":"əˈsɪŋk","phonemes":["AX","S","IH","NG","K"],
+    "segments":[{"letters":"a","phonemes":["AX"]},{"letters":"s","phonemes":["S"]},{"letters":"y","phonemes":["IH"]},{"letters":"n","phonemes":["NG"]},{"letters":"c","phonemes":["K"]}],
+    "example":"Use async when the operation must wait."
+  },
+  {
+    "word":"cache","meaning":"缓存","category":"编程英语","ipa":"kæʃ","phonemes":["K","AE","SH"],
+    "segments":[{"letters":"c","phonemes":["K"]},{"letters":"a","phonemes":["AE"]},{"letters":"che","phonemes":["SH"]}],
+    "example":"Clear the cache and try again."
+  },
+  {
+    "word":"commit","meaning":"提交；提交记录","category":"编程英语","ipa":"kəˈmɪt","phonemes":["K","AX","M","IH","T"],
+    "segments":[{"letters":"c","phonemes":["K"]},{"letters":"o","phonemes":["AX"]},{"letters":"mm","phonemes":["M"]},{"letters":"i","phonemes":["IH"]},{"letters":"t","phonemes":["T"]}],
+    "example":"Create a commit after testing."
+  }
+]

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>英语发声打字机</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">PHONEME MACHINE · LOCAL LAB</p>
+        <h1>英语发声打字机</h1>
+        <p class="subtitle">让手指、拼写和声音在同一刻发生。</p>
+      </div>
+      <div class="service-wrap">
+        <span id="service-status" class="status checking">正在连接本地语音…</span>
+        <button id="enable-audio" class="primary">启用声音</button>
+      </div>
+    </header>
+
+    <section class="control-strip" aria-label="声音设置">
+      <label>音量 <input id="volume" type="range" min="0" max="1" step="0.05" value="0.8"></label>
+      <label>语速 <input id="rate" type="range" min="80" max="250" step="5" value="145"><output id="rate-value">145</output></label>
+      <button id="mute" class="quiet" aria-pressed="false">静音</button>
+      <button id="replay" class="quiet">重播</button>
+    </section>
+
+    <nav class="mode-tabs" aria-label="学习模式">
+      <button class="mode-tab active" data-mode="practice">拼写练习</button>
+      <button class="mode-tab" data-mode="free">自由输入</button>
+      <button class="mode-tab" data-mode="phoneme">音素键盘</button>
+    </nav>
+
+    <main>
+      <section id="practice-panel" class="mode-panel active" aria-labelledby="practice-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">01 · GUIDED SPELLING</p>
+            <h2 id="practice-title">听见你正在拼的单词</h2>
+          </div>
+          <div class="filter-group" aria-label="词库筛选">
+            <button class="filter active" data-category="全部">全部</button>
+            <button class="filter" data-category="界面英语">界面英语</button>
+            <button class="filter" data-category="编程英语">编程英语</button>
+          </div>
+        </div>
+
+        <article id="lesson-card" class="lesson-card" tabindex="0" aria-label="拼写练习区域">
+          <div class="lesson-meta">
+            <span id="lesson-category" class="pill">界面英语</span>
+            <span id="lesson-count">1 / 30</span>
+          </div>
+          <div class="meaning-row">
+            <div>
+              <p class="label">中文提示</p>
+              <h3 id="lesson-meaning">设置</h3>
+            </div>
+            <button id="show-answer" class="quiet">显示答案</button>
+          </div>
+          <div id="typing-word" class="typing-word" aria-live="polite"></div>
+          <p id="typing-hint" class="hint">直接用键盘输入；错误不会推进光标。</p>
+          <div id="lesson-result" class="lesson-result hidden">
+            <strong id="result-word"></strong>
+            <span id="result-ipa"></span>
+            <div id="result-segments" class="segment-list"></div>
+            <p id="result-example"></p>
+          </div>
+          <div class="lesson-actions">
+            <button id="previous-word" class="quiet">上一个</button>
+            <button id="repeat-word" class="quiet">重复练习</button>
+            <button id="next-word" class="primary">下一个 <kbd>Enter</kbd></button>
+          </div>
+        </article>
+
+        <aside class="stats-card" aria-label="本机学习记录">
+          <div><span class="stat-label">正确率</span><strong id="accuracy">—</strong></div>
+          <div><span class="stat-label">已完成</span><strong id="completed-count">0</strong></div>
+          <div><span class="stat-label">最常出错</span><strong id="hardest-word">暂无</strong></div>
+          <button id="clear-progress" class="danger-link">清空本机记录</button>
+        </aside>
+      </section>
+
+      <section id="free-panel" class="mode-panel" aria-labelledby="free-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">02 · FREE INPUT</p>
+            <h2 id="free-title">把刚遇到的英语放进来</h2>
+          </div>
+        </div>
+        <form id="free-form" class="free-card">
+          <label for="free-input">英文单词或短句</label>
+          <div class="free-input-row">
+            <input id="free-input" type="text" maxlength="256" autocomplete="off" spellcheck="false" placeholder="例如：permission denied">
+            <button class="primary" type="submit">分析并朗读</button>
+          </div>
+          <p class="hint">输入字母时朗读字母名；按 Enter 获取美式 IPA。自由输入不自动猜字母组合。</p>
+          <div id="free-result" class="analysis-result hidden" aria-live="polite">
+            <span class="label">IPA</span>
+            <strong id="free-ipa"></strong>
+            <span class="label">eSpeak 音素</span>
+            <code id="free-espeak"></code>
+          </div>
+        </form>
+      </section>
+
+      <section id="phoneme-panel" class="mode-panel" aria-labelledby="phoneme-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-index">03 · IPA KEYBOARD</p>
+            <h2 id="phoneme-title">用音素直接“拼”声音</h2>
+          </div>
+        </div>
+        <div class="phoneme-composer" tabindex="0" aria-label="音素键盘输入区域">
+          <div class="buffer-header">
+            <span class="label">音素缓冲区</span>
+            <span class="key-help"><kbd>Space</kbd> 边界 · <kbd>⌫</kbd> 删除 · <kbd>Esc</kbd> 清空 · <kbd>Enter</kbd> 合成</span>
+          </div>
+          <div id="phoneme-buffer" class="phoneme-buffer" aria-live="polite"><span class="placeholder">按物理键或点击下面的音素…</span></div>
+          <div id="word-matches" class="word-matches"></div>
+          <div class="composer-actions">
+            <button id="backspace-phoneme" class="quiet">删除一个</button>
+            <button id="clear-phonemes" class="quiet">清空</button>
+            <button id="speak-phonemes" class="primary">合成发音 <kbd>Enter</kbd></button>
+          </div>
+        </div>
+        <div id="phoneme-groups" class="phoneme-groups"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span>离线运行 · 美式英语 · 不上传学习数据</span>
+      <span id="message" role="status"></span>
+    </footer>
+  </div>
+  <script type="module" src="/static/app.mjs"></script>
+</body>
+</html>
