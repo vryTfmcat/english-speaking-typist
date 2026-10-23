@@ -16,6 +16,12 @@ sys.path.insert(0, str(ROOT))
 
 import server as app_server  # noqa: E402
 
+try:
+    app_server.find_espeak()
+    ESPEAK_AVAILABLE = True
+except app_server.ApiError:
+    ESPEAK_AVAILABLE = False
+
 
 class ValidationTests(unittest.TestCase):
     def test_port_argument(self) -> None:
@@ -28,10 +34,20 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(context.exception.status, 413)
 
     def test_missing_espeak_is_reported(self) -> None:
-        with mock.patch("server.shutil.which", return_value=None):
+        with mock.patch("server.shutil.which", return_value=None), mock.patch("server.Path.is_file", return_value=False):
             with self.assertRaises(app_server.ApiError) as context:
                 app_server.find_espeak()
         self.assertEqual(context.exception.status, 503)
+
+    def test_windows_install_discovered_without_path(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            executable = Path(directory) / "Programs" / "eSpeak NG" / "espeak-ng.exe"
+            executable.parent.mkdir(parents=True)
+            executable.touch()
+            with mock.patch("server.shutil.which", return_value=None), \
+                 mock.patch("server.sys.platform", "win32"), \
+                 mock.patch.dict("server.os.environ", {"LOCALAPPDATA": directory}, clear=True):
+                self.assertEqual(app_server.find_espeak(), executable)
 
     def test_unknown_phoneme_is_rejected(self) -> None:
         service = app_server.SpeechService(executable=Path("/fake/espeak-ng"))
@@ -89,7 +105,7 @@ class DataTests(unittest.TestCase):
                 self.assertTrue(set(segment["phonemes"]).issubset(ids), lesson["word"])
 
 
-@unittest.skipUnless(shutil.which("espeak-ng"), "eSpeak NG is not installed")
+@unittest.skipUnless(ESPEAK_AVAILABLE, "eSpeak NG is not installed")
 class HttpIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
