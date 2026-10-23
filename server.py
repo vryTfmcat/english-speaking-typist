@@ -10,6 +10,7 @@ import mimetypes
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import threading
 from http import HTTPStatus
@@ -73,12 +74,24 @@ def normalize_rate(value: object) -> int:
 
 def find_espeak() -> Path:
     executable = shutil.which("espeak-ng")
-    if not executable:
-        raise ApiError(
-            HTTPStatus.SERVICE_UNAVAILABLE,
-            "找不到 eSpeak NG，请先运行 brew install espeak-ng",
-        )
-    return Path(executable)
+    if executable:
+        return Path(executable)
+    if sys.platform == "win32":
+        # Launchers may inherit an old PATH from Explorer or the desktop app.
+        # Also support the stable user-level and official default install folders.
+        folders = [("LOCALAPPDATA", "Programs/eSpeak NG"),
+                   ("ProgramFiles", "eSpeak NG"),
+                   ("ProgramFiles(x86)", "eSpeak NG")]
+        for variable, relative in folders:
+            base = os.environ.get(variable)
+            if base:
+                candidate = Path(base) / relative / "espeak-ng.exe"
+                if candidate.is_file():
+                    return candidate
+        message = "找不到 eSpeak NG，请安装官方 Windows 版本后重试"
+    else:
+        message = "找不到 eSpeak NG，请先运行 brew install espeak-ng"
+    raise ApiError(HTTPStatus.SERVICE_UNAVAILABLE, message)
 
 
 def load_phonemes(path: Path = PHONEMES_PATH) -> Tuple[List[dict], Dict[str, dict]]:
@@ -96,6 +109,11 @@ class SpeechService:
 
     def __init__(self, executable: Optional[Path] = None) -> None:
         self.executable = executable or find_espeak()
+        self.environment = os.environ.copy()
+        if sys.platform == "win32":
+            data_path = self.executable.parent / "espeak-ng-data"
+            if data_path.is_dir():
+                self.environment.setdefault("ESPEAK_DATA_PATH", str(data_path))
         self.phonemes, self.phonemes_by_id = load_phonemes()
         self.cache_root = CACHE_ROOT
         self.cache_root.mkdir(parents=True, exist_ok=True)
@@ -105,6 +123,7 @@ class SpeechService:
         completed = subprocess.run(
             [str(self.executable), "--version"],
             check=True,
+            env=self.environment,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             timeout=5,
@@ -116,6 +135,7 @@ class SpeechService:
             [str(self.executable)] + list(arguments),
             input=text.encode("utf-8"),
             check=True,
+            env=self.environment,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=10,
